@@ -93,12 +93,16 @@ function parse(src, {
             }
         }
 
+        if(!dent.length && prev.length > dent.length){
+            dent = prev;
+        }
+
         if(dent.length === prev.length){
             let value = line.replace(space, '');
 
             branch.push({
                 value,
-                indent: line.match(space)[0],
+                indent: dent,
                 depth,
                 lineNumber,
                 subtree: []
