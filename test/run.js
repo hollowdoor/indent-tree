@@ -14,3 +14,17 @@ let output = indentTree.parse(`
 `);
 
 purdy(output, {depth: 9, indent: 2});
+
+output = indentTree.parse(`
+    first
+        first child
+    second
+
+    third
+      child
+            sub child 1
+            
+            sub child 2
+`, {noBlankLines: false});
+
+purdy(output, {depth: 9, indent: 2});

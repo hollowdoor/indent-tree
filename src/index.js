@@ -34,7 +34,7 @@ function parse(src, {
     }
 
     let lines = src.split(/\n/);
-    let notspace = /\S/;
+    let notspace = /\S/g;
 
     let subtree = [];
     let depth = 0, lineNumber = startLine - 1;
@@ -71,7 +71,7 @@ function parse(src, {
     }
 
     let first = lines[0].match(space)[0];
-    let dent = first, prev, collect;
+    let dent = first, prev;
 
     for(let i=0; i<lines.length; i++){
         let line = lines[i];

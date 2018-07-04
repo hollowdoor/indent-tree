@@ -36,7 +36,7 @@ function parse(src, {
     }
 
     let lines = src.split(/\n/);
-    let notspace = /\S/;
+    let notspace = /\S/g;
 
     let subtree = [];
     let depth = 0, lineNumber = startLine - 1;
